@@ -7,8 +7,15 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-    origin: 'https://teerex-mern-project-backend.vercel.app/'
+    origin: 'https://teerex-mern-project-backend.vercel.app'
   }));
+
+  app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://teerex-mern-project-backend.vercel.app");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  })
 
 mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net/?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
