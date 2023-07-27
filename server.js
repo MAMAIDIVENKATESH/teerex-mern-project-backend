@@ -7,6 +7,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors())
+app.use(express.json());
 
 mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net/?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
@@ -16,7 +17,7 @@ mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net
     () => console.log('DB Connection established')
 )
 
-app.use(express.json());
+
 
 
 
