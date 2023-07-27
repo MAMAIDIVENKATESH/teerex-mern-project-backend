@@ -17,7 +17,7 @@ mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net
 
 app.use(express.json());
 
-app.use(cors({origin:"*"}))
+app.use(cors())
 
 app.post('/register',async (req, res) =>{
     try{
