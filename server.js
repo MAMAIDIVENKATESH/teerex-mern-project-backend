@@ -6,7 +6,10 @@ const middleware = require('./middleware');
 const cors = require('cors');
 const app = express();
 
-app.use(cors())
+app.use(cors({
+    origin: 'https://teerex-mern-project-backend.vercel.app/'
+  }));
+
 mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net/?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
     useNewUrlParser: true,
