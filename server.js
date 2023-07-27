@@ -88,6 +88,11 @@ app.get('/myprofile',middleware,async(req, res)=>{
     }
 })
 
+
+app.get('/', (req, res) => {
+    res.json({message: 'server running'})
+})
+
 app.listen(5002,()=>{
     console.log('Server running...')
 })
