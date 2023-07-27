@@ -6,7 +6,7 @@ const middleware = require('./middleware');
 const cors = require('cors');
 const app = express();
 
-
+app.use(cors())
 mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net/?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
     useNewUrlParser: true,
@@ -17,7 +17,7 @@ mongoose.connect("mongodb+srv://mamidi096:venkatesh@cluster0.bblrcph.mongodb.net
 
 app.use(express.json());
 
-app.use(cors())
+
 
 app.post('/register',async (req, res) =>{
     try{
